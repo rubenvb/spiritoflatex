@@ -1,0 +1,152 @@
+/**
+The MIT License (MIT)
+
+Copyright (c) 2016 Ruben Van Boxem
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+**/
+
+#include "parser.h++"
+
+namespace sol
+{
+  namespace parser
+  {
+    const greek_lower_case_letters_ greek_lower_case_letter;
+    greek_lower_case_letters_::greek_lower_case_letters_()
+    {
+      add
+          ("textalpha",   u8"\u03B1"_u8char2)
+          ("textbeta",    u8"\u03B2"_u8char2)
+          ("textgamma",   u8"\u03B3"_u8char2)
+          ("textdelta",   u8"\u03B4"_u8char2)
+          ("textepsilon", u8"\u03B5"_u8char2)
+          ("textzeta",    u8"\u03B6"_u8char2)
+          ("texteta",     u8"\u03B7"_u8char2)
+          ("texttheta",   u8"\u03B8"_u8char2)
+          ("textiota",    u8"\u03B9"_u8char2)
+          ("textkappa",   u8"\u03BA"_u8char2)
+          ("textlambda",  u8"\u03BB"_u8char2)
+          ("textmu",      u8"\u03BC"_u8char2)
+          ("textnu",      u8"\u03BD"_u8char2)
+          ("textxi",      u8"\u03BE"_u8char2)
+          ("textomicron", u8"\u03BF"_u8char2)
+          ("textpi",      u8"\u03C0"_u8char2)
+          ("textrho",     u8"\u03C1"_u8char2)
+          ("textsigma",   u8"\u03C3"_u8char2) // U+03C2 is varsigma
+          ("texttau",     u8"\u03C4"_u8char2)
+          ("textupsilon", u8"\u03C5"_u8char2)
+          ("textphi",     u8"\u03D5"_u8char2) // U+03C4 is varphi
+          ("textchi",     u8"\u03C7"_u8char2)
+          ("textpsi",     u8"\u03C8"_u8char2)
+          ("textomega",   u8"\u03C9"_u8char2)
+      ;
+    }
+    const greek_upper_case_letters_ greek_upper_case_letter;
+    greek_upper_case_letters_::greek_upper_case_letters_()
+    {
+      add
+          ("Alpha",   u8"\u0391"_u8char2)
+          ("Beta",    u8"\u0392"_u8char2)
+          ("Gamma",   u8"\u0393"_u8char2)
+          ("Delta",   u8"\u0394"_u8char2)
+          ("Epsilon", u8"\u0395"_u8char2)
+          ("Zeta",    u8"\u0396"_u8char2)
+          ("Eta",     u8"\u0397"_u8char2)
+          ("Theta",   u8"\u0398"_u8char2)
+          ("Iota",    u8"\u0399"_u8char2)
+          ("Kappa",   u8"\u039A"_u8char2)
+          ("Lambda",  u8"\u039B"_u8char2)
+          ("Mu",      u8"\u039C"_u8char2)
+          ("Nu",      u8"\u039D"_u8char2)
+          ("Xi",      u8"\u039E"_u8char2)
+          ("Omicron", u8"\u039F"_u8char2)
+          ("Pi",      u8"\u03A0"_u8char2)
+          ("Rho",     u8"\u03A1"_u8char2)
+          ("Sigma",   u8"\u03A3"_u8char2) // U+03A2 is unassigned
+          ("Tau",     u8"\u03A4"_u8char2)
+          ("Upsilon", u8"\u03A5"_u8char2)
+          ("Phi",     u8"\u03A6"_u8char2)
+          ("Chi",     u8"\u03A7"_u8char2)
+          ("Psi",     u8"\u03A8"_u8char2)
+          ("Omega",   u8"\u03C9"_u8char2)
+      ;
+    }
+    const math_greek_lower_case_letters_ math_greek_lower_case_letter;
+    math_greek_lower_case_letters_::math_greek_lower_case_letters_()
+    {
+      add
+          ("alpha",   u8"\U0001D6FC"_u8char4)
+          ("beta",    u8"\U0001D6FD"_u8char4)
+          ("gamma",   u8"\U0001D6FE"_u8char4)
+          ("delta",   u8"\U0001D6FF"_u8char4)
+          ("epsilon", u8"\U0001D700"_u8char4)
+          ("zeta",    u8"\U0001D701"_u8char4)
+          ("eta",     u8"\U0001D702"_u8char4)
+          ("theta",   u8"\U0001D703"_u8char4)
+          ("iota",    u8"\U0001D704"_u8char4)
+          ("kappa",   u8"\U0001D705"_u8char4)
+          ("lambda",  u8"\U0001D706"_u8char4)
+          ("mu",      u8"\U0001D707"_u8char4)
+          ("nu",      u8"\U0001D708"_u8char4)
+          ("xi",      u8"\U0001D709"_u8char4)
+          ("omicron", u8"\U0001D70A"_u8char4)
+          ("pi",      u8"\U0001D70B"_u8char4)
+          ("rho",     u8"\U0001D70C"_u8char4)
+          ("sigma",   u8"\U0001D70E"_u8char4)
+          ("tau",     u8"\U0001D70F"_u8char4)
+          ("upsilon", u8"\U0001D710"_u8char4)
+          ("phi",     u8"\U0001D711"_u8char4)
+          ("chi",     u8"\U0001D712"_u8char4)
+          ("psi",     u8"\U0001D713"_u8char4)
+          ("omega",   u8"\U0001D714"_u8char4)
+      ;
+    }
+    const math_greek_upper_case_letters_ math_greek_upper_case_letter;
+    math_greek_upper_case_letters_::math_greek_upper_case_letters_()
+    {
+      add
+          ("Alpha",   u8"\U0001D6E2"_u8char4)
+          ("Beta",    u8"\U0001D6E3"_u8char4)
+          ("Gamma",   u8"\U0001D6E4"_u8char4)
+          ("Delta",   u8"\U0001D6E5"_u8char4)
+          ("Epsilon", u8"\U0001D6E6"_u8char4)
+          ("Zeta",    u8"\U0001D6E7"_u8char4)
+          ("Eta",     u8"\U0001D6E8"_u8char4)
+          ("Theta",   u8"\U0001D6E9"_u8char4)
+          ("Iota",    u8"\U0001D6EA"_u8char4)
+          ("Kappa",   u8"\U0001D6EB"_u8char4)
+          ("Lambda",  u8"\U0001D6EC"_u8char4)
+          ("Mu",      u8"\U0001D6ED"_u8char4)
+          ("Nu",      u8"\U0001D6EE"_u8char4)
+          ("Xi",      u8"\U0001D6EF"_u8char4)
+          ("Omicron", u8"\U0001D6F0"_u8char4)
+          ("Pi",      u8"\U0001D6F1"_u8char4)
+          ("Rho",     u8"\U0001D6F2"_u8char4)
+          ("Theta",   u8"\U0001D6F3"_u8char4)
+          ("Sigma",   u8"\U0001D6F4"_u8char4)
+          ("Tau",     u8"\U0001D6F5"_u8char4)
+          ("Upsilon", u8"\U0001D6F6"_u8char4)
+          ("Phi",     u8"\U0001D6F7"_u8char4)
+          ("Chi",     u8"\U0001D6F8"_u8char4)
+          ("Psi",     u8"\U0001D6F9"_u8char4)
+          ("Omega",   u8"\U0001D6FA"_u8char4)
+      ;
+    }
+  }
+}
