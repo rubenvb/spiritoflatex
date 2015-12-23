@@ -148,5 +148,70 @@ namespace sol
           ("Omega",   u8"\U0001D6FA"_u8char4)
       ;
     }
+
+    const math_latin_lower_case_letters_ math_latin_lower_case_letter;
+    math_latin_lower_case_letters_::math_latin_lower_case_letters_()
+    {
+      add
+          ("a", u8"\U0001D44E")
+          ("b", u8"\U0001D44F")
+          ("c", u8"\U0001D450")
+          ("d", u8"\U0001D451")
+          ("e", u8"\U0001D452")
+          ("f", u8"\U0001D453")
+          ("g", u8"\U0001D454")
+          ("h", u8"\U0000210E") // this one is one byte shorter than the rest
+          ("i", u8"\U0001D456")
+          ("j", u8"\U0001D457")
+          ("k", u8"\U0001D458")
+          ("l", u8"\U0001D459")
+          ("m", u8"\U0001D45A")
+          ("n", u8"\U0001D45B")
+          ("o", u8"\U0001D45C")
+          ("p", u8"\U0001D45D")
+          ("q", u8"\U0001D45E")
+          ("r", u8"\U0001D45F")
+          ("s", u8"\U0001D460")
+          ("t", u8"\U0001D461")
+          ("u", u8"\U0001D462")
+          ("v", u8"\U0001D463")
+          ("w", u8"\U0001D464")
+          ("x", u8"\U0001D465")
+          ("y", u8"\U0001D466")
+          ("z", u8"\U0001D467")
+       ;
+    }
+    const math_latin_upper_case_letters_ math_latin_upper_case_letter;
+    math_latin_upper_case_letters_::math_latin_upper_case_letters_()
+    {
+      add
+          ("A", u8"\U0001D434"_u8char4)
+          ("B", u8"\U0001D435"_u8char4)
+          ("C", u8"\U0001D436"_u8char4)
+          ("D", u8"\U0001D437"_u8char4)
+          ("E", u8"\U0001D438"_u8char4)
+          ("F", u8"\U0001D439"_u8char4)
+          ("G", u8"\U0001D43A"_u8char4)
+          ("H", u8"\U0001D43B"_u8char4)
+          ("I", u8"\U0001D43C"_u8char4)
+          ("J", u8"\U0001D43D"_u8char4)
+          ("K", u8"\U0001D43E"_u8char4)
+          ("L", u8"\U0001D43F"_u8char4)
+          ("M", u8"\U0001D440"_u8char4)
+          ("N", u8"\U0001D441"_u8char4)
+          ("O", u8"\U0001D442"_u8char4)
+          ("p", u8"\U0001D443"_u8char4)
+          ("Q", u8"\U0001D444"_u8char4)
+          ("R", u8"\U0001D445"_u8char4)
+          ("S", u8"\U0001D446"_u8char4)
+          ("T", u8"\U0001D447"_u8char4)
+          ("U", u8"\U0001D448"_u8char4)
+          ("V", u8"\U0001D449"_u8char4)
+          ("W", u8"\U0001D44A"_u8char4)
+          ("X", u8"\U0001D44B"_u8char4)
+          ("Y", u8"\U0001D44C"_u8char4)
+          ("Z", u8"\U0001D44D"_u8char4)
+       ;
+    }
   }
 }

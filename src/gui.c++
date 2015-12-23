@@ -23,6 +23,7 @@ THE SOFTWARE.
 
 #include "gui.h++"
 
+#include <iomanip>
 #include <boost/lexical_cast.hpp>
 
 #include <QDebug>
@@ -67,7 +68,7 @@ void gui::parse_input()
   auto last = input_string.end();
   bool success = x3::phrase_parse(first, last,
                               // Begin grammar
-                              tex_math
+                              document//tex_math
                               ,
                               // End grammar
                               space,
@@ -79,7 +80,12 @@ void gui::parse_input()
     output->setText("Parsing failed.");
   else
   {
-    qDebug() << result.size() << ": " << result.data();
+    assert(first == last);
+    assert(success);
+    qDebug() << result.size() << ": ";
+    for(char c : result)
+      qDebug() << QByteArray(1,c).toHex();
+
     output->setText("Parsing succeeded: "
                     + QString::fromUtf8(result.data(), static_cast<int>(result.size())));
   }
