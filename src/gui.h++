@@ -26,7 +26,7 @@ THE SOFTWARE.
 #include <QWidget>
 
 class QTextEdit;
-class QLabel;
+class QTextBrowser;
 class QPushButton;
 
 class gui : public QWidget
@@ -40,6 +40,6 @@ class gui : public QWidget
   private:
     // GUI elements
     QTextEdit* input;
-    QLabel* output;
+    QTextBrowser* output;
     QPushButton* parse_button;
 };

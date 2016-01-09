@@ -25,7 +25,13 @@ THE SOFTWARE.
 #include <cinttypes>
 #include <cstddef>
 #include <string>
-using u8string = std::string;
+#include <vector>
+using u8string = std::vector<char>;
+
+inline u8string operator "" _u8string(const char* str, std::size_t len)
+{
+  return u8string(str, str+len);
+}
 
 constexpr inline std::array<char, 2> operator "" _u8char2(const char* str, std::size_t)
 {

@@ -95,7 +95,7 @@ namespace sol
           ("beta",    u8"\U0001D6FD"_u8char4)
           ("gamma",   u8"\U0001D6FE"_u8char4)
           ("delta",   u8"\U0001D6FF"_u8char4)
-          ("epsilon", u8"\U0001D700"_u8char4)
+          ("epsilon", u8"\U000003F5"_u8char4)
           ("zeta",    u8"\U0001D701"_u8char4)
           ("eta",     u8"\U0001D702"_u8char4)
           ("theta",   u8"\U0001D703"_u8char4)
@@ -212,6 +212,13 @@ namespace sol
           ("Y", u8"\U0001D44C"_u8char4)
           ("Z", u8"\U0001D44D"_u8char4)
        ;
+    }
+    const math_miscellaneous_letters_ math_miscellaneous_letter;
+    math_miscellaneous_letters_::math_miscellaneous_letters_()
+    {
+      add
+          ("varepsilon", u8"\U0001D700")
+         ;
     }
   }
 }
