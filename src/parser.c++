@@ -61,32 +61,34 @@ namespace sol
     greek_upper_case_letters_::greek_upper_case_letters_()
     {
       add
-          ("Alpha",   u8"\u0391"_u8char2)
-          ("Beta",    u8"\u0392"_u8char2)
-          ("Gamma",   u8"\u0393"_u8char2)
-          ("Delta",   u8"\u0394"_u8char2)
-          ("Epsilon", u8"\u0395"_u8char2)
-          ("Zeta",    u8"\u0396"_u8char2)
-          ("Eta",     u8"\u0397"_u8char2)
-          ("Theta",   u8"\u0398"_u8char2)
-          ("Iota",    u8"\u0399"_u8char2)
-          ("Kappa",   u8"\u039A"_u8char2)
-          ("Lambda",  u8"\u039B"_u8char2)
-          ("Mu",      u8"\u039C"_u8char2)
-          ("Nu",      u8"\u039D"_u8char2)
-          ("Xi",      u8"\u039E"_u8char2)
-          ("Omicron", u8"\u039F"_u8char2)
-          ("Pi",      u8"\u03A0"_u8char2)
-          ("Rho",     u8"\u03A1"_u8char2)
-          ("Sigma",   u8"\u03A3"_u8char2) // U+03A2 is unassigned
-          ("Tau",     u8"\u03A4"_u8char2)
-          ("Upsilon", u8"\u03A5"_u8char2)
-          ("Phi",     u8"\u03A6"_u8char2)
-          ("Chi",     u8"\u03A7"_u8char2)
-          ("Psi",     u8"\u03A8"_u8char2)
-          ("Omega",   u8"\u03C9"_u8char2)
+          ("textAlpha",   u8"\u0391"_u8char2)
+          ("textBeta",    u8"\u0392"_u8char2)
+          ("textGamma",   u8"\u0393"_u8char2)
+          ("textDelta",   u8"\u0394"_u8char2)
+          ("textEpsilon", u8"\u0395"_u8char2)
+          ("textZeta",    u8"\u0396"_u8char2)
+          ("textEta",     u8"\u0397"_u8char2)
+          ("textTheta",   u8"\u0398"_u8char2)
+          ("textIota",    u8"\u0399"_u8char2)
+          ("textKappa",   u8"\u039A"_u8char2)
+          ("textLambda",  u8"\u039B"_u8char2)
+          ("textMu",      u8"\u039C"_u8char2)
+          ("textNu",      u8"\u039D"_u8char2)
+          ("textXi",      u8"\u039E"_u8char2)
+          ("textOmicron", u8"\u039F"_u8char2)
+          ("textPi",      u8"\u03A0"_u8char2)
+          ("textRho",     u8"\u03A1"_u8char2)
+          ("textSigma",   u8"\u03A3"_u8char2) // U+03A2 is unassigned
+          ("textTau",     u8"\u03A4"_u8char2)
+          ("textUpsilon", u8"\u03A5"_u8char2)
+          ("textPhi",     u8"\u03A6"_u8char2)
+          ("textChi",     u8"\u03A7"_u8char2)
+          ("textPsi",     u8"\u03A8"_u8char2)
+          ("textOmega",   u8"\u03C9"_u8char2)
       ;
     }
+
+//#ifdef SPIRITOFLATEX_USE_UNICODE_MATHEMATICAL_ALPHANUMERIC_SYMBOLS
     const math_greek_lower_case_letters_ math_greek_lower_case_letter;
     math_greek_lower_case_letters_::math_greek_lower_case_letters_()
     {
@@ -220,5 +222,10 @@ namespace sol
           ("varepsilon", u8"\U0001D700")
          ;
     }
+//#else
+//    const greek_lower_case_letters_ math_greek_lower_case_letter = greek_lower_case_letter;
+//    const greek_upper_case_letters_ math_greek_upper_case_letter = greek_upper_case_letter;
+
+//#endif
   }
 }
